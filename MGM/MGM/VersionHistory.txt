@@ -1,4 +1,7 @@
-﻿32||Version 0.32
+﻿33||Version 0.33
+- Mafia Game Master Bot goes opensource! https://github.com/jinek/MafiaGameMasterBot
+
+Version 0.32
 - text corrections
 
 Version 0.31
