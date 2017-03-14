@@ -1,0 +1,4 @@
+﻿11||Version 0.09
+- versioning introduced
+- users with empty nickname now can not participate in game
+- new commands: /subscribe /unsubscribe /version

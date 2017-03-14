@@ -1,0 +1,193 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MGM", "MGM\MGM.csproj", "{F8166E86-6B89-4BF9-8E39-6EE9A21A623A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BotFlow", "BotFlow", "{C64D9708-49B3-4A9F-822E-A9A1FC88343E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MGM.BotFlow", "MGM.BotFlow\MGM.BotFlow.csproj", "{57664E61-D372-48E3-BEE7-0A70AA09F89D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MGM.BotFlow.ConsoleTest", "MGM.BotFlow.ConsoleTest\MGM.BotFlow.ConsoleTest.csproj", "{5F45C964-9B48-42A8-95A6-2C9FE5C64FC3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Game", "Game", "{CB659C9A-D23E-44F7-9C09-4D26E1B89BC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MGM.Game", "MGM.Game\MGM.Game.csproj", "{9AC11701-4990-49F4-A65D-4141FB36202D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MGM.Game.TestConsole", "MGM.Game.TestConsole\MGM.Game.TestConsole.csproj", "{F868CF4A-1450-4AEB-A395-018FC3E95D19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MGM.Game.Tests", "MGM.Game.Tests\MGM.Game.Tests.csproj", "{A843B15E-8703-44CA-A523-DD696E930B03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MGM.Game.Engine", "MGM.Game.Engine\MGM.Game.Engine.csproj", "{E388BF9C-D940-43E9-A615-26CCD0954B54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MGM.Game.Persistance", "MGM.Game.Persistance\MGM.Game.Persistance.csproj", "{CC959B93-A1FD-45F9-916A-476F4303C21E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MGM.Game.ForImplementors", "MGM.Game.ForImplementors\MGM.Game.ForImplementors.csproj", "{586FF929-59E2-4B97-A353-2FC4FEA7F27A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{A528CEC0-E78C-401F-91CF-5FDDCE71AF4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MGM.Helpers", "MGM.Helpers\MGM.Helpers.csproj", "{E835A24B-5EC4-443A-8FFC-D5E9DAF8F734}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MGM.Localization", "MGM.Localization\MGM.Localization.csproj", "{8B296A2B-2EAE-4C77-AC83-D342FDD761EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AE37AF83-5E2A-45D9-91AC-29C0FA885406}"
+	ProjectSection(SolutionItems) = preProject
+		Logo.design = Logo.design
+		Logo.png = Logo.png
+		..\..\..\..\Desktop\MafiaLogo.png = ..\..\..\..\Desktop\MafiaLogo.png
+		Texts.txt = Texts.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MGM.TelemetryGlobal", "MGM.TelemetryGlobal\MGM.TelemetryGlobal.csproj", "{E00FE33E-44E1-475D-80BE-374EC27CECED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		ONECHAT_DEBUG|Any CPU = ONECHAT_DEBUG|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8166E86-6B89-4BF9-8E39-6EE9A21A623A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8166E86-6B89-4BF9-8E39-6EE9A21A623A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8166E86-6B89-4BF9-8E39-6EE9A21A623A}.ONECHAT_DEBUG|Any CPU.ActiveCfg = ONECHAT_DEBUG|Any CPU
+		{F8166E86-6B89-4BF9-8E39-6EE9A21A623A}.ONECHAT_DEBUG|Any CPU.Build.0 = ONECHAT_DEBUG|Any CPU
+		{F8166E86-6B89-4BF9-8E39-6EE9A21A623A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8166E86-6B89-4BF9-8E39-6EE9A21A623A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57664E61-D372-48E3-BEE7-0A70AA09F89D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57664E61-D372-48E3-BEE7-0A70AA09F89D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57664E61-D372-48E3-BEE7-0A70AA09F89D}.ONECHAT_DEBUG|Any CPU.ActiveCfg = ONECHAT_DEBUG|Any CPU
+		{57664E61-D372-48E3-BEE7-0A70AA09F89D}.ONECHAT_DEBUG|Any CPU.Build.0 = ONECHAT_DEBUG|Any CPU
+		{57664E61-D372-48E3-BEE7-0A70AA09F89D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57664E61-D372-48E3-BEE7-0A70AA09F89D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F45C964-9B48-42A8-95A6-2C9FE5C64FC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F45C964-9B48-42A8-95A6-2C9FE5C64FC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F45C964-9B48-42A8-95A6-2C9FE5C64FC3}.ONECHAT_DEBUG|Any CPU.ActiveCfg = ONECHAT_DEBUG|Any CPU
+		{5F45C964-9B48-42A8-95A6-2C9FE5C64FC3}.ONECHAT_DEBUG|Any CPU.Build.0 = ONECHAT_DEBUG|Any CPU
+		{5F45C964-9B48-42A8-95A6-2C9FE5C64FC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F45C964-9B48-42A8-95A6-2C9FE5C64FC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AC11701-4990-49F4-A65D-4141FB36202D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AC11701-4990-49F4-A65D-4141FB36202D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AC11701-4990-49F4-A65D-4141FB36202D}.ONECHAT_DEBUG|Any CPU.ActiveCfg = ONECHAT_DEBUG|Any CPU
+		{9AC11701-4990-49F4-A65D-4141FB36202D}.ONECHAT_DEBUG|Any CPU.Build.0 = ONECHAT_DEBUG|Any CPU
+		{9AC11701-4990-49F4-A65D-4141FB36202D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AC11701-4990-49F4-A65D-4141FB36202D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F868CF4A-1450-4AEB-A395-018FC3E95D19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F868CF4A-1450-4AEB-A395-018FC3E95D19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F868CF4A-1450-4AEB-A395-018FC3E95D19}.ONECHAT_DEBUG|Any CPU.ActiveCfg = ONECHAT_DEBUG|Any CPU
+		{F868CF4A-1450-4AEB-A395-018FC3E95D19}.ONECHAT_DEBUG|Any CPU.Build.0 = ONECHAT_DEBUG|Any CPU
+		{F868CF4A-1450-4AEB-A395-018FC3E95D19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F868CF4A-1450-4AEB-A395-018FC3E95D19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A843B15E-8703-44CA-A523-DD696E930B03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A843B15E-8703-44CA-A523-DD696E930B03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A843B15E-8703-44CA-A523-DD696E930B03}.ONECHAT_DEBUG|Any CPU.ActiveCfg = ONECHAT_DEBUG|Any CPU
+		{A843B15E-8703-44CA-A523-DD696E930B03}.ONECHAT_DEBUG|Any CPU.Build.0 = ONECHAT_DEBUG|Any CPU
+		{A843B15E-8703-44CA-A523-DD696E930B03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A843B15E-8703-44CA-A523-DD696E930B03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E388BF9C-D940-43E9-A615-26CCD0954B54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E388BF9C-D940-43E9-A615-26CCD0954B54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E388BF9C-D940-43E9-A615-26CCD0954B54}.ONECHAT_DEBUG|Any CPU.ActiveCfg = ONECHAT_DEBUG|Any CPU
+		{E388BF9C-D940-43E9-A615-26CCD0954B54}.ONECHAT_DEBUG|Any CPU.Build.0 = ONECHAT_DEBUG|Any CPU
+		{E388BF9C-D940-43E9-A615-26CCD0954B54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E388BF9C-D940-43E9-A615-26CCD0954B54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC959B93-A1FD-45F9-916A-476F4303C21E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC959B93-A1FD-45F9-916A-476F4303C21E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC959B93-A1FD-45F9-916A-476F4303C21E}.ONECHAT_DEBUG|Any CPU.ActiveCfg = ONCHAT_DEBUG|Any CPU
+		{CC959B93-A1FD-45F9-916A-476F4303C21E}.ONECHAT_DEBUG|Any CPU.Build.0 = ONCHAT_DEBUG|Any CPU
+		{CC959B93-A1FD-45F9-916A-476F4303C21E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC959B93-A1FD-45F9-916A-476F4303C21E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{586FF929-59E2-4B97-A353-2FC4FEA7F27A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{586FF929-59E2-4B97-A353-2FC4FEA7F27A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{586FF929-59E2-4B97-A353-2FC4FEA7F27A}.ONECHAT_DEBUG|Any CPU.ActiveCfg = ONE_CHATDEBUG|Any CPU
+		{586FF929-59E2-4B97-A353-2FC4FEA7F27A}.ONECHAT_DEBUG|Any CPU.Build.0 = ONE_CHATDEBUG|Any CPU
+		{586FF929-59E2-4B97-A353-2FC4FEA7F27A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{586FF929-59E2-4B97-A353-2FC4FEA7F27A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E835A24B-5EC4-443A-8FFC-D5E9DAF8F734}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E835A24B-5EC4-443A-8FFC-D5E9DAF8F734}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E835A24B-5EC4-443A-8FFC-D5E9DAF8F734}.ONECHAT_DEBUG|Any CPU.ActiveCfg = ONECHAT_DEBUG|Any CPU
+		{E835A24B-5EC4-443A-8FFC-D5E9DAF8F734}.ONECHAT_DEBUG|Any CPU.Build.0 = ONECHAT_DEBUG|Any CPU
+		{E835A24B-5EC4-443A-8FFC-D5E9DAF8F734}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E835A24B-5EC4-443A-8FFC-D5E9DAF8F734}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B296A2B-2EAE-4C77-AC83-D342FDD761EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B296A2B-2EAE-4C77-AC83-D342FDD761EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B296A2B-2EAE-4C77-AC83-D342FDD761EE}.ONECHAT_DEBUG|Any CPU.ActiveCfg = ONECHAT_DEBUG|Any CPU
+		{8B296A2B-2EAE-4C77-AC83-D342FDD761EE}.ONECHAT_DEBUG|Any CPU.Build.0 = ONECHAT_DEBUG|Any CPU
+		{8B296A2B-2EAE-4C77-AC83-D342FDD761EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B296A2B-2EAE-4C77-AC83-D342FDD761EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E00FE33E-44E1-475D-80BE-374EC27CECED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E00FE33E-44E1-475D-80BE-374EC27CECED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E00FE33E-44E1-475D-80BE-374EC27CECED}.ONECHAT_DEBUG|Any CPU.ActiveCfg = Release|Any CPU
+		{E00FE33E-44E1-475D-80BE-374EC27CECED}.ONECHAT_DEBUG|Any CPU.Build.0 = Release|Any CPU
+		{E00FE33E-44E1-475D-80BE-374EC27CECED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E00FE33E-44E1-475D-80BE-374EC27CECED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{57664E61-D372-48E3-BEE7-0A70AA09F89D} = {C64D9708-49B3-4A9F-822E-A9A1FC88343E}
+		{5F45C964-9B48-42A8-95A6-2C9FE5C64FC3} = {C64D9708-49B3-4A9F-822E-A9A1FC88343E}
+		{9AC11701-4990-49F4-A65D-4141FB36202D} = {CB659C9A-D23E-44F7-9C09-4D26E1B89BC9}
+		{F868CF4A-1450-4AEB-A395-018FC3E95D19} = {CB659C9A-D23E-44F7-9C09-4D26E1B89BC9}
+		{A843B15E-8703-44CA-A523-DD696E930B03} = {CB659C9A-D23E-44F7-9C09-4D26E1B89BC9}
+		{E388BF9C-D940-43E9-A615-26CCD0954B54} = {CB659C9A-D23E-44F7-9C09-4D26E1B89BC9}
+		{CC959B93-A1FD-45F9-916A-476F4303C21E} = {CB659C9A-D23E-44F7-9C09-4D26E1B89BC9}
+		{586FF929-59E2-4B97-A353-2FC4FEA7F27A} = {CB659C9A-D23E-44F7-9C09-4D26E1B89BC9}
+		{E835A24B-5EC4-443A-8FFC-D5E9DAF8F734} = {A528CEC0-E78C-401F-91CF-5FDDCE71AF4A}
+		{8B296A2B-2EAE-4C77-AC83-D342FDD761EE} = {A528CEC0-E78C-401F-91CF-5FDDCE71AF4A}
+		{E00FE33E-44E1-475D-80BE-374EC27CECED} = {A528CEC0-E78C-401F-91CF-5FDDCE71AF4A}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 13
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://jinek.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = MGM\\MGM.csproj
+		SccProjectName1 = MGM
+		SccLocalPath1 = MGM
+		SccProjectUniqueName2 = MGM.BotFlow\\MGM.BotFlow.csproj
+		SccProjectTopLevelParentUniqueName2 = MGM.sln
+		SccProjectName2 = MGM.BotFlow
+		SccLocalPath2 = MGM.BotFlow
+		SccProjectUniqueName3 = MGM.BotFlow.ConsoleTest\\MGM.BotFlow.ConsoleTest.csproj
+		SccProjectTopLevelParentUniqueName3 = MGM.sln
+		SccProjectName3 = MGM.BotFlow.ConsoleTest
+		SccLocalPath3 = MGM.BotFlow.ConsoleTest
+		SccProjectUniqueName4 = MGM.Game\\MGM.Game.csproj
+		SccProjectTopLevelParentUniqueName4 = MGM.sln
+		SccProjectName4 = MGM.Game
+		SccLocalPath4 = MGM.Game
+		SccProjectUniqueName5 = MGM.Game.TestConsole\\MGM.Game.TestConsole.csproj
+		SccProjectTopLevelParentUniqueName5 = MGM.sln
+		SccProjectName5 = MGM.Game.TestConsole
+		SccLocalPath5 = MGM.Game.TestConsole
+		SccProjectUniqueName6 = MGM.Game.Tests\\MGM.Game.Tests.csproj
+		SccProjectTopLevelParentUniqueName6 = MGM.sln
+		SccProjectName6 = MGM.Game.Tests
+		SccLocalPath6 = MGM.Game.Tests
+		SccProjectUniqueName7 = MGM.Game.Engine\\MGM.Game.Engine.csproj
+		SccProjectTopLevelParentUniqueName7 = MGM.sln
+		SccProjectName7 = MGM.Game.Engine
+		SccLocalPath7 = MGM.Game.Engine
+		SccProjectUniqueName8 = MGM.Game.Persistance\\MGM.Game.Persistance.csproj
+		SccProjectTopLevelParentUniqueName8 = MGM.sln
+		SccProjectName8 = MGM.Game.Persistance
+		SccLocalPath8 = MGM.Game.Persistance
+		SccProjectUniqueName9 = MGM.Game.ForImplementors\\MGM.Game.ForImplementors.csproj
+		SccProjectTopLevelParentUniqueName9 = MGM.sln
+		SccProjectName9 = MGM.Game.ForImplementors
+		SccLocalPath9 = MGM.Game.ForImplementors
+		SccProjectUniqueName10 = MGM.Helpers\\MGM.Helpers.csproj
+		SccProjectTopLevelParentUniqueName10 = MGM.sln
+		SccProjectName10 = MGM.Helpers
+		SccLocalPath10 = MGM.Helpers
+		SccProjectUniqueName11 = MGM.Localization\\MGM.Localization.csproj
+		SccProjectTopLevelParentUniqueName11 = MGM.sln
+		SccProjectName11 = MGM.Localization
+		SccLocalPath11 = MGM.Localization
+		SccProjectUniqueName12 = MGM.TelemetryGlobal\\MGM.TelemetryGlobal.csproj
+		SccProjectTopLevelParentUniqueName12 = MGM.sln
+		SccProjectName12 = MGM.TelemetryGlobal
+		SccLocalPath12 = MGM.TelemetryGlobal
+	EndGlobalSection
+EndGlobal

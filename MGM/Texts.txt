@@ -1,0 +1,20 @@
+About
+Mafia Game Master (Mafia Game) Beta 0.1
+
+Description
+Add this bot to your chat to play the popular game "Mafia". From 3 to 8 players can participiate in the game.
+All users who wish to play the game need to type /ready command. Type /go when you are ready to play. This bot will guide you and will give you some instructions to play.
+Please, vote and leave your comments here https://storebot.me/bot/MafiaGameMasterBot
+
+Commands
+start - start the bot
+ready - participiate in the game
+exit - leave the game
+go - start the game
+abort - abort the game
+vote - start voting now (available in public chat at day time)
+modes - look up game modes (actual mode will be chosen automatically up on players amount)
+status - see game status
+feedback - send feedback to developers (anonymously)
+language - change language
+help - see help

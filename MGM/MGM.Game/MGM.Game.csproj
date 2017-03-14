@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9AC11701-4990-49F4-A65D-4141FB36202D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MGM.Game</RootNamespace>
+    <AssemblyName>MGM.Game</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ONECHAT_DEBUG|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ONECHAT_DEBUG\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;ONECHAT_DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DependencyInversion\IDelayer.cs" />
+    <Compile Include="DependencyInversion\IGameStateBanner.cs" />
+    <Compile Include="DependencyInversion\IGameStateBannerProvider.cs" />
+    <Compile Include="DependencyInversion\IRandomStoryTeller.cs" />
+    <Compile Include="DependencyInversion\IStatShower.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="Helpers\GameCommandException.cs" />
+    <Compile Include="Helpers\GameHelper.cs" />
+    <Compile Include="Models\GameSettings.cs" />
+    <Compile Include="Models\GameStatus.cs" />
+    <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="States\AutoGameState.cs" />
+    <Compile Include="States\DayState.cs" />
+    <Compile Include="States\EndState.cs" />
+    <Compile Include="States\FinalVotingState.cs" />
+    <Compile Include="States\GameState.cs" />
+    <Compile Include="States\NightState.cs" />
+    <Compile Include="States\PlayerRole.cs" />
+    <Compile Include="States\PreVotingState.cs" />
+    <Compile Include="States\VotingStateBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MGM.BotFlow\MGM.BotFlow.csproj">
+      <Project>{57664E61-D372-48E3-BEE7-0A70AA09F89D}</Project>
+      <Name>MGM.BotFlow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MGM.Localization\MGM.Localization.csproj">
+      <Project>{8B296A2B-2EAE-4C77-AC83-D342FDD761EE}</Project>
+      <Name>MGM.Localization</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
