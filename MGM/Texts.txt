@@ -5,6 +5,7 @@ Description
 Add this bot to your chat to play the popular game "Mafia". From 3 to 8 players can participiate in the game.
 All users who wish to play the game need to type /ready command. Type /go when you are ready to play. This bot will guide you and will give you some instructions to play.
 Please, vote and leave your comments here https://storebot.me/bot/MafiaGameMasterBot
+Source code is open now: https://github.com/jinek/MafiaGameMasterBot
 
 Commands
 start - start the bot
