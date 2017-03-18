@@ -1,4 +1,7 @@
-﻿33||Version 0.33
+﻿34||Version 0.34
+- Fixed: sometimes game stops accidently
+
+Version 0.33
 - Mafia Game Master Bot goes opensource! https://github.com/jinek/MafiaGameMasterBot
 
 Version 0.32
