@@ -41,8 +41,15 @@ namespace MGM
                         {
 //если есть ещё работы, следим что бы сервер не лёг
                             Trace.WriteLine("Есть игры на будущее, таймер запускает сам себя");
-                            new WebClient().DownloadString( //todo: low ну и нафига каждые 10 секунд себя будить.
-                                new UriBuilder(originalUri) {Path = "Timer.ashx", Query = string.Empty}.Uri);
+                            try
+                            {
+                                new WebClient().DownloadString( //todo: low ну и нафига каждые 10 секунд себя будить.
+                                    new UriBuilder(originalUri) {Path = "Timer.ashx", Query = string.Empty}.Uri);
+                            }
+                            catch (WebException exception)
+                            {
+                                throw new WebException($"Original Uri was {originalUri}",exception);
+                            }
                         }
                     }
                     catch (Exception exception)
