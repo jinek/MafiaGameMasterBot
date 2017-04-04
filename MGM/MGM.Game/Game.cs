@@ -105,6 +105,10 @@ namespace MGM.Game
             var player = new Player(user);
             if (Players.Contains(player))
                 throw new GameCommandException(LocalizedStrings.Game_YouAreInGameAlready);
+            if (Players.Any(pl => pl.Id == player.Id))
+            {
+                throw new GameCommandException(LocalizedStrings.Fault_TheSameId);
+            }
             Players.Add(player);
             return player;
         }

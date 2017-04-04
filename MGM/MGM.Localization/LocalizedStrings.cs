@@ -226,6 +226,10 @@ _Get enough players and type /go to start the game_")]
 _Наберите достаточное количество игроков и введите /go что бы начать игру_")]
         public static readonly LS Game_YouAreInGameAlready;
 
+        [LV("Because of unknown issue you can not parcipiate in this game. Please, leave your /feedback")]
+        [LV("Вы не можете учавствовать в этой игре из за технической проблемы. Пожалуйста, оставьте свой отзыв /feedback")]
+        public static readonly LS Fault_TheSameId;
+
         [LV("You have exited the game")]
         [LV("Вы вышли из игры")]
         public static readonly LS Game_YouAreNotInGame;

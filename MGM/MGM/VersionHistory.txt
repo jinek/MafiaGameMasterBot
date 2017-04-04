@@ -1,4 +1,7 @@
-﻿35||Version 0.35
+﻿36||Version 0.36
+- fixed: adding some users caused game crashing
+
+||Version 0.35
 - more logging
 
 Version 0.34
