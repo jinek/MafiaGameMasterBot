@@ -147,7 +147,7 @@ namespace MGM.Game.States
                 }
                 catch (ArgumentException exception)
                 {
-                    throw new ArgumentException($"Id was {alivePlayerId}",exception);
+                    throw new InvalidOperationException($"Id was {alivePlayerId}",exception);
                 }
             }
 
