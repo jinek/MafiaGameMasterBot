@@ -1,4 +1,7 @@
-﻿34||Version 0.34
+﻿35||Version 0.35
+- more logging
+
+Version 0.34
 - Fixed: sometimes game stops accidently
 
 Version 0.33

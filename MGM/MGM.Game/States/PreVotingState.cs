@@ -131,8 +131,9 @@ namespace MGM.Game.States
             {
                 var alivePlayer = _alivePlayers[i];
                 int voteAgainstCount = 0;
+                var alivePlayerId = alivePlayer.Id;
                 if(showResults)
-                voteAgainstCount = Votes.Count(pair => pair.Value.Id == alivePlayer.Id);
+                voteAgainstCount = Votes.Count(pair => pair.Value.Id == alivePlayerId);
 
                 text += $@"{i}. {alivePlayer.Username}";
 
@@ -140,7 +141,14 @@ namespace MGM.Game.States
                 text += @"
 ";
 
-                pars.Add(alivePlayer.Id.ToString(), i.ToString());
+                try
+                {
+                    pars.Add(alivePlayerId.ToString(), i.ToString());
+                }
+                catch (ArgumentException exception)
+                {
+                    throw new ArgumentException($"Id was {alivePlayerId}",exception);
+                }
             }
 
             pars.Add(SkipKey,LocalizedStrings.PrevotingState_ToSkip);
