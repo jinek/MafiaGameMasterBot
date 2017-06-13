@@ -43,8 +43,11 @@ namespace MGM
                             Trace.WriteLine("Есть игры на будущее, таймер запускает сам себя");
                             try
                             {
-                                new WebClient().DownloadStringAsync( //todo: low ну и нафига каждые 10 секунд себя будить.
-                                    new UriBuilder(originalUri) {Path = "Timer.ashx", Query = string.Empty}.Uri);
+                                using (var webClient = new WebClient())
+                                {
+                                    webClient.DownloadString(
+                                        new UriBuilder(originalUri) {Path = "Timer.ashx", Query = string.Empty}.Uri);
+                                }
                             }
                             catch (WebException exception)
                             {
