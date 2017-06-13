@@ -11,7 +11,7 @@ namespace MGM
     {
         static Timer()
         {
-            RunTimer();
+            RunTimer(HttpContext.Current.Request.Url);
         }
         
         public void ProcessRequest(HttpContext context)
@@ -24,7 +24,7 @@ namespace MGM
             //ничего не делаем, всё в конструкторе
         }
 
-        private static void RunTimer()
+        private static void RunTimer(Uri originalUri)
         {
             //todo: low посмотреть че будет если бота заблочить или удалить чат или выкинуть его из чата
             Trace.WriteLine("Timer invoked");
@@ -41,6 +41,18 @@ namespace MGM
                         {
 //если есть ещё работы, следим что бы сервер не лёг
                             Trace.WriteLine("Есть игры на будущее, таймер запускает сам себя");
+                            try
+                            {
+                                using (var webClient = new WebClient())
+                                {
+                                    webClient.DownloadString(
+                                        new UriBuilder(originalUri) {Path = "Timer.ashx", Query = string.Empty}.Uri);
+                                }
+                            }
+                            catch (WebException exception)
+                            {
+                                throw new WebException($"Original Uri was {originalUri}",exception);
+                            }
                         }
                     }
                     catch (Exception exception)
