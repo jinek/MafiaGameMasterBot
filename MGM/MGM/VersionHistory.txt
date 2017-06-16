@@ -1,5 +1,8 @@
-﻿37||Version 0.37
-- minor improvements (more error loging)
+﻿38||Version 0.38
+- fixed: sometimes game stops after minute
+
+Version 0.37
+- minor improvements (more error logging)
 
 Version 0.36
 - fixed: adding some users caused game crashing

@@ -45,8 +45,7 @@ namespace MGM
                             {
                                 using (var webClient = new WebClient())
                                 {
-                                    webClient.DownloadString(
-                                        new UriBuilder(originalUri) {Path = "Timer.ashx", Query = string.Empty}.Uri);
+                                    webClient.DownloadString(@"http://127.0.0.1/Timer.ashx");
                                 }
                             }
                             catch (WebException exception)
