@@ -11,7 +11,7 @@ namespace MGM
     {
         static Timer()
         {
-            RunTimer(HttpContext.Current.Request.Url);
+            RunTimer(HttpContext.Current.Request.Headers["HOSTNAME"]);
         }
         
         public void ProcessRequest(HttpContext context)
@@ -24,7 +24,7 @@ namespace MGM
             //ничего не делаем, всё в конструкторе
         }
 
-        private static void RunTimer(Uri originalUri)
+        private static void RunTimer(string originalUri)
         {
             //todo: low посмотреть че будет если бота заблочить или удалить чат или выкинуть его из чата
             Trace.WriteLine("Timer invoked");
@@ -45,7 +45,9 @@ namespace MGM
                             {
                                 using (var webClient = new WebClient())
                                 {
-                                    webClient.DownloadString(@"http://127.0.0.1/Timer.ashx");
+                                    //https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox
+                                    //Connection attempts to local addresses (e.g. localhost, 127.0.0.1) and the machine's own IP will fail, except if another process in the same sandbox has created a listening socket on the destination port.
+                                    webClient.DownloadString($@"http://{originalUri}/Timer.ashx");
                                 }
                             }
                             catch (WebException exception)
