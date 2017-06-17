@@ -41,24 +41,18 @@ namespace MGM
                         {
 //если есть ещё работы, следим что бы сервер не лёг
                             Trace.WriteLine("Есть игры на будущее, таймер запускает сам себя");
-                            try
+
+                            using (var webClient = new WebClient())
                             {
-                                using (var webClient = new WebClient())
-                                {
-                                    //https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox
-                                    //Connection attempts to local addresses (e.g. localhost, 127.0.0.1) and the machine's own IP will fail, except if another process in the same sandbox has created a listening socket on the destination port.
-                                    webClient.DownloadString($@"http://{originalUri}/Timer.ashx");
-                                }
-                            }
-                            catch (WebException exception)
-                            {
-                                throw new WebException($"Original Uri was {originalUri}",exception);
+                                //https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox
+                                //Connection attempts to local addresses (e.g. localhost, 127.0.0.1) and the machine's own IP will fail, except if another process in the same sandbox has created a listening socket on the destination port.
+                                webClient.DownloadString($@"http://{originalUri}/Timer.ashx");
                             }
                         }
                     }
                     catch (Exception exception)
                     {
-                      WorkHere.LogException(exception);
+                      WorkHere.LogException(new InvalidOperationException($@"Exception while Uri is {originalUri}",exception));
                     }
                     //todo: low это как бы может выключиться посередине какой-нить хрени, например пользователи сохранятся, а game нет
                 }
