@@ -11,7 +11,7 @@ namespace MGM
     {
         static Timer()
         {
-            RunTimer(HttpContext.Current.Request.Headers["HOSTNAME"]);
+            RunTimer();
         }
         
         public void ProcessRequest(HttpContext context)
@@ -24,7 +24,7 @@ namespace MGM
             //ничего не делаем, всё в конструкторе
         }
 
-        private static void RunTimer(string originalUri)
+        private static void RunTimer()
         {
             //todo: low посмотреть че будет если бота заблочить или удалить чат или выкинуть его из чата
             Trace.WriteLine("Timer invoked");
@@ -41,18 +41,11 @@ namespace MGM
                         {
 //если есть ещё работы, следим что бы сервер не лёг
                             Trace.WriteLine("Есть игры на будущее, таймер запускает сам себя");
-
-                            using (var webClient = new WebClient())
-                            {
-                                //https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox
-                                //Connection attempts to local addresses (e.g. localhost, 127.0.0.1) and the machine's own IP will fail, except if another process in the same sandbox has created a listening socket on the destination port.
-                                webClient.DownloadString($@"http://{originalUri}/Timer.ashx");
-                            }
                         }
                     }
                     catch (Exception exception)
                     {
-                      WorkHere.LogException(new InvalidOperationException($@"Exception while Uri is {originalUri}",exception));
+                      WorkHere.LogException(exception);
                     }
                     //todo: low это как бы может выключиться посередине какой-нить хрени, например пользователи сохранятся, а game нет
                 }

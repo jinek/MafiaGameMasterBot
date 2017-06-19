@@ -1,4 +1,7 @@
-﻿38||Version 0.38
+﻿39||Version 0.39
+- fixed one more time: sometimes game stops after minute
+
+Version 0.38
 - fixed: sometimes game stops after minute
 
 Version 0.37
