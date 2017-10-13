@@ -137,8 +137,8 @@ namespace MGM.Localization
         [LV("Пользователь *{0}* не учавствует в игре")]
         public static readonly LS GameHelper_UserIsNotInGame;
 
-        [LV(@"Please, write something to me personally, so I will be able to send you secret messages. To do that follow this link: https://telegram.me/MafiaGameMasterBot ")]
-        [LV(@"Пожалуйста, напишите мне что-нибудь в приватный чат, что бы я смог слать Вам секретные сообщения. Для этого пройдите по ссылке: https://telegram.me/MafiaGameMasterBot ")]
+        [LV(@"Please, write a personal message to me, so I will be able to send you secret messages. To do that follow this link: https://telegram.me/MafiaGameMasterBot and choose 'Send Message'")]
+        [LV(@"Пожалуйста, напишите мне личное сообщение, что бы я смог слать Вам секретные сообщения. Для этого пройдите по ссылке: https://telegram.me/MafiaGameMasterBot")]
         public static readonly LS GameProvider_MessageMeToPrivateChat;
 
         [LV("You can heal or kill only at night time. _Wait for the night in one of your current games, in which you participate as a doctor, policeman or mafia_")]
@@ -340,7 +340,7 @@ _По итогам будет начато ещё одно финальное г
         public static readonly LS PrevotingState_UserDoesNotPlay;
 
         [LV("Now I'm allowed to send messages to you. _Type /ready in chat to play_")]
-        [LV("Теперь я смогу отправлять Вам сообщения. _Введите /ready в чате, что бы принять участие в игре_")]
+        [LV("Теперь я смогу отправлять Вам сообщения. _Введите /ready в общем чате, что бы принять участие в игре_")]
         public static readonly LS PrivateEngine_ICanTextYou;
 
         [LV("_Type /modes to see possible game modes_")]
