@@ -5,6 +5,11 @@ namespace MGM.Game.Persistance.Database.DataModels.State
 {
     public class UserInChat
     {
+        public UserInChat()
+        {
+            WantToBeReady = false;
+        }
+
         public int Id { get; set; }
         public long UserId { get; set; }
         public long ChatId { get; set; }
@@ -13,5 +18,7 @@ namespace MGM.Game.Persistance.Database.DataModels.State
         public ChatInTelegram ChatInTelegram { get; set; }
         
         public IList<FlowState> FlowStates { get; set; } = new List<FlowState>();
+
+        public bool WantToBeReady { get; set; }
     }
 }

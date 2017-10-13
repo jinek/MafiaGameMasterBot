@@ -351,6 +351,10 @@ _По итогам будет начато ещё одно финальное г
         [LV("Добро пожаловать в игру!")]
         public static readonly LS PrivateEngine_WelcomeToGame;
 
+        [LV("User {0} is joining the game")]
+        [LV("Пользователь {0} присоединяется к игре")]
+        public static readonly LS UserJoinsGame;
+
         [LV("You can play in  mode {0}. _Type /go to start_")]
         [LV("Вы можете играть в режиме {0}. _Введите /go что бы начать игру_")]
         public static readonly LS PrivateEngine_YouCanPlayAs;

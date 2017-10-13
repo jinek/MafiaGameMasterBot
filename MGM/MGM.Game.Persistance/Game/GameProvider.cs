@@ -273,7 +273,7 @@ namespace MGM.Game.Persistance.Game
         /// </summary>
         /// <returns>Returns True if User was created</returns>
         /// <exception cref="GameCommandException">if createIfNotExist is false and user does not exist</exception>
-        public bool CheckUserInTelegram(long userId, long? privateChatId=null)
+        public bool CheckUserInTelegram(long userId, long? privateChatId=null,long? publicChatId=null)
         {
             return UsingDb(db =>
             {
@@ -282,7 +282,16 @@ namespace MGM.Game.Persistance.Game
                 if (userInTelegram.PrivateChat == null)
                 {
                     if (privateChatId == null)
+                    {
+                        if(publicChatId!=null)
+                        {
+                            var userInPublicChat = userInTelegram.UserInChats.Single(userInChat => userInChat.ChatId==publicChatId);
+                            userInPublicChat.WantToBeReady = true;
+                            db.SaveChanges();
+                        }
+                        
                         throw new GameCommandException(LocalizedStrings.GameProvider_MessageMeToPrivateChat);
+                    }
                     
                     var chatInTelegram = db.ChatInTelegrams.ById((long) privateChatId);
                     userInTelegram.PrivateChat = chatInTelegram;

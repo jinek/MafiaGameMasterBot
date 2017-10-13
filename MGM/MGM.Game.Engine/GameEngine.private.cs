@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Linq;
 using MGM.BotFlow.Extensions;
+using MGM.BotFlow.Persistance;
 using MGM.BotFlow.Processing;
 using MGM.Game.Engine.Helpers;
 using MGM.Game.Helpers;
+using MGM.Game.Persistance.Database.Helpers;
 using MGM.Game.Persistance.Game;
 using MGM.Game.States;
 using MGM.Localization;
@@ -23,6 +26,29 @@ namespace MGM.Game.Engine
             return false;
         }
 
+        private void ExecuteIfPrivateChatWasAlreadyCreatedBefore(CallContext context, Action action)
+        {
+            if (!CheckUserInTelegram(context))
+            {
+                action();
+            }
+            else
+            {
+                var gameProvider = context.GetGameProvider();
+
+                gameProvider.UsingDb(dbContext =>
+                {
+                    var userInTelegram = dbContext.UserInTelegrams.ById(context.UserInChat.UserId);
+                    foreach (var userInChatToBeReady in userInTelegram.UserInChats.Where(userInChat => userInChat
+                        .WantToBeReady))
+                        Ready(
+                            new UserInChat(
+                                new Chat(userInChatToBeReady.ChatId, "" /*Where to take name from. May be from game*/),
+                                context.Update.GetUser()), _gameProvider);
+                });
+            }
+        }
+
         private void BuildPrivateFlow()
         {
 #if ONECHAT_DEBUG
@@ -32,14 +58,13 @@ namespace MGM.Game.Engine
 #endif
             _privateEngine.AddCommand("start").Execute(context =>
             {
-                if (!CheckUserInTelegram(context))
-                {
-                    context.ReplyEcho(LocalizedStrings.PirvateEngine_AddMeToChat);
-                }
+                ExecuteIfPrivateChatWasAlreadyCreatedBefore(context,
+                    () => { context.ReplyEcho(LocalizedStrings.PirvateEngine_AddMeToChat); });
             });
+
             _privateEngine.AddAnyInput().Execute(context =>
             {
-                if (!CheckUserInTelegram(context))
+                ExecuteIfPrivateChatWasAlreadyCreatedBefore(context, () =>
                 {
                     context.InvokeGame(game =>
                     {
@@ -64,33 +89,37 @@ namespace MGM.Game.Engine
                             context.ReplyEcho(str);
                         }
                         else
+                        {
                             context.ReplyEcho(LocalizedStrings.PirvateEngine_YourChoiceAccepted);
+                        }
                     });
-                }
+                });
             });
         }
 
-        private static void SayPlayersCount(CallContext context, Game game)
+        private static void SayPlayersCount(Game game, CallContext context=null)
         {
             var count = game.Players.Count;
             var distributions = GameState.NewGameState.PlayersDistribution.Distributions;
-            var welcome = LocalizedStrings.PrivateEngine_WelcomeToGame + @"
+            var contextProvided = context != null;
+            var welcome = (contextProvided?LocalizedStrings.PrivateEngine_WelcomeToGame:LocalizedStrings.UserJoinsGame )+ @"
 ";
             if (count < 3)
             {
-                welcome += string.Format(LocalizedStrings.PrivateEngine_YouNeedMorePlayers, 3 - count, distributions[3].ToString(3));
+                welcome += string.Format(LocalizedStrings.PrivateEngine_YouNeedMorePlayers, 3 - count,
+                    distributions[3].ToString(3));
             }
             else
             {
                 if (count >= distributions.Length)
-                {
                     throw new GameCommandException(LocalizedStrings.PirvateEngine_CanNotAddMorePlayers);
-                }
-                welcome += string.Format(LocalizedStrings.PrivateEngine_YouCanPlayAs, distributions[count].ToString(count));
+                welcome += string.Format(LocalizedStrings.PrivateEngine_YouCanPlayAs,
+                    distributions[count].ToString(count));
             }
             welcome += @"
 " + LocalizedStrings.PrivateEngine_ToSeeMoreModes;
-            context.ReplyEcho(welcome);
+            if (contextProvided) context.ReplyEcho(welcome);
+            else game.GameStateBannerProvider.CreateBanner(welcome);
         }
     }
 }
