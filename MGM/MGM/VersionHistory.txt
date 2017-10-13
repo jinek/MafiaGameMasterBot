@@ -1,4 +1,8 @@
-﻿39||Version 0.39
+﻿40||Version 0.40
+- user now automatically joins the game after first private message to bot (if requested before)
+- fixed: text
+
+Version 0.39
 - fixed one more time: sometimes game stops after minute
 
 Version 0.38
