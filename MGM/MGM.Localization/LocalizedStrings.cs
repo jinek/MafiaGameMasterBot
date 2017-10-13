@@ -339,8 +339,8 @@ _По итогам будет начато ещё одно финальное г
         [LV("Игрок не участвует в игре")]
         public static readonly LS PrevotingState_UserDoesNotPlay;
 
-        [LV("Now I'm allowed to send messages to you. _Type /ready in chat to play_")]
-        [LV("Теперь я смогу отправлять Вам сообщения. _Введите /ready в общем чате, что бы принять участие в игре_")]
+        [LV("Now I'm allowed to send messages to you.")]
+        [LV("Теперь я смогу отправлять Вам сообщения.")]
         public static readonly LS PrivateEngine_ICanTextYou;
 
         [LV("_Type /modes to see possible game modes_")]
