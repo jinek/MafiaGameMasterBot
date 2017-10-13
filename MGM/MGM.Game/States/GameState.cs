@@ -74,7 +74,7 @@ namespace MGM.Game.States
                     null, null, null,
                     new PlayersDistribution(1), //3
                     new PlayersDistribution(1), //4
-                    new PlayersDistribution(1, true,winOnPoliceDie:true), //5 
+                    new PlayersDistribution(1, true), //5 
                     new PlayersDistribution(2, true, true,true), //6 
                     new PlayersDistribution(2, true, true,true), //7 
                     new PlayersDistribution(2, true, true,true) //8 
@@ -87,6 +87,8 @@ namespace MGM.Game.States
 
                 private PlayersDistribution(int mafiaCount, bool hasDoctor = false, bool hasPolice = false,bool winOnPoliceDie=false)
                 {
+                    if(!hasPolice && winOnPoliceDie)throw new ArgumentException($"{nameof(winOnPoliceDie)} can't be true when {nameof(hasPolice)} is false");
+
                     _mafiaCount = mafiaCount;
                     _hasPolice = hasPolice;
                     _winOnPoliceDie = winOnPoliceDie;//todo: low may be should always be true
