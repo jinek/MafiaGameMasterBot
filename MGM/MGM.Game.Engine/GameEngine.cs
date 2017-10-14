@@ -88,11 +88,7 @@ namespace MGM.Game.Engine
                                 {
                                     apiChat.Echo(LocalizedStrings.GameUpdatedMessage, 0, null);
                                 }
-                                catch (ApiChatException exception)
-                                {
-                                    var apiRequestException = exception.InnerException as ApiRequestException;
-                                    if (apiRequestException != null && apiRequestException.ErrorCode != 400) throw;//это кейс что Chat was deactivated
-                                }
+                                catch (ApiChatBadRequestException) { }
                                 //todo: should return it context.Delete(chat);
                             });
                             //context.SaveChanges();
