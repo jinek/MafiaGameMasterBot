@@ -77,6 +77,11 @@ namespace MGM.Localization
         [LV("*Игра отменена*")]
         public static readonly LS EndState_GameAborted;
 
+        [LV("*Game aborted by bot. May be bot was blocked*")]
+        [LV("*Игра отменена системой. Возможно бот был заблокирован одним из пользователей или в чате*")]
+        public static readonly LS EndState_GameAbortedBySystem;
+        
+
         [LV("Mafia won!")]
         [LV("Победила мафия")]
         public static readonly LS EndState_MafiaWin;

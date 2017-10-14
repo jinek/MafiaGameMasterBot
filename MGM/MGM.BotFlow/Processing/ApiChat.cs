@@ -166,9 +166,8 @@ namespace MGM.BotFlow.Processing
                     var errorCode = ((ApiRequestException)innerException).ErrorCode;
                     if (errorCode == 403) return new T();
                     if (errorCode == 400)
-                    {//Error_Code is 400Bad Request: group chat was migrated to a supergroup chat Error_Code is 400Bad Request: group chat was migrated to a supergroup chat
-                        TelemetryStatic.TelemetryClient.TrackException(new Exception("Пришла 400 ошибка, мы на ней не падали, если что.",innerException));
-                        return new T();
+                    {
+                        throw new ApiChatBadRequestException();
                     }
                     errorText += $@"
 Error_Code is {errorCode}";

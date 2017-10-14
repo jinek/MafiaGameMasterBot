@@ -1,4 +1,7 @@
-﻿40||Version 0.40
+﻿41||Version 0.41
+- automatic game abortion when bot becomes blocked
+
+Version 0.40
 - user now automatically joins the game after first private message to bot (if requested before)
 - fixed: text
 

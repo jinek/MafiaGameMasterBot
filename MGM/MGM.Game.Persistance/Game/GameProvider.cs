@@ -315,10 +315,23 @@ namespace MGM.Game.Persistance.Game
                 Thread.Sleep((TimeSpan)delay);
                 LocalizedStrings.Language = language;
                 TelemetryStatic.TelemetryClient = telemetry;
-                lock (game)
+                lock (game)//todo: this action (receive game, lock it, process and save) is repeted in several places - must be extracted to somewhere
                 {
                     if (ownerState != game.State) return; //silently give up, state was changed
-                    doAction();
+                    try
+                    {
+                        doAction();
+                    }
+                    catch (ApiChatBadRequestException )
+                    {
+                        try
+                        {
+                            game.Abort(true);
+                        }
+                        catch (ApiChatBadRequestException )
+                        {
+                        }
+                    }
                     SaveGame(game);
                 }
             });

@@ -117,9 +117,13 @@ namespace MGM.Game.Engine
 
                 if (!_typingTyped)
                 {
-                    _typingTyped = true;//no locks - fine to do it several times
-                    
-                    TelemetryStatic.TelemetryClient.TrackEvent("Typing",new Dictionary<string, string> {[TelemetryStatic.ToChatKey]=chatId.ToString()});//todo: low incapsulate telemetry so all this assemblies don't have to depend on microsoft insight
+                    _typingTyped = true; //no locks - fine to do it several times
+
+                    TelemetryStatic.TelemetryClient.TrackEvent("Typing",
+                        new Dictionary<string, string>
+                        {
+                            [TelemetryStatic.ToChatKey] = chatId.ToString()
+                        }); //todo: low incapsulate telemetry so all this assemblies don't have to depend on microsoft insight
                     _api.SendChatAction(chatId, ChatAction.Typing);
                 }
 #if ONECHAT_DEBUG
@@ -150,17 +154,20 @@ namespace MGM.Game.Engine
                 var language = _gameProvider.GetLanguageForChat(chatId);
                 LocalizedStrings.Language = language;
 
-                IState finalState;
                 var isPrivate = update.IsPrivate();
-                if (isPrivate)
+                try
                 {
-                    _privateEngine.Process(update, _gameProvider, out finalState);
+                    IState finalState;
+                    if (isPrivate)
+                        _privateEngine.Process(update, _gameProvider, out finalState);
+                    else
+                        _publicEngine.Process(update, _gameProvider, out finalState);
+
+                    ((DatabaseState)finalState).SaveAndDispose();
                 }
-                else
+                catch (ApiChatBadRequestException)
                 {
-                    _publicEngine.Process(update, _gameProvider, out finalState);
                 }
-                ((DatabaseState) finalState).SaveAndDispose();
             }
             catch (ChatException chatException)
             {
@@ -170,6 +177,7 @@ namespace MGM.Game.Engine
 
                 // думаю не стоит этого делать, потому что пропадает инфа для отладки DatabaseStateProvider.CleanStateForChat(new UserInChat(update.GetChat().ToChat(), update.GetUser()), _connectionString);
             }
+            
             return true;
         }
 
@@ -195,7 +203,20 @@ namespace MGM.Game.Engine
                 {
                     var language = _gameProvider.GetLanguageForChat(game.ChatId);
                     LocalizedStrings.Language = language;
-                    game.Timer();
+
+                    try
+                    {
+                        game.Timer();
+                    }
+                    catch (ApiChatBadRequestException)
+                    {
+                        try
+                        {
+                            game.Abort(true);
+                        }
+                        catch (ApiChatBadRequestException) { }
+                    }
+
                     _gameProvider.SaveGame(game);
                 }
             });

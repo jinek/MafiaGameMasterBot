@@ -74,6 +74,7 @@
     <Compile Include="Persistance\Chat.cs" />
     <Compile Include="Persistance\IStateProvider.cs" />
     <Compile Include="Persistance\UserInChat.cs" />
+    <Compile Include="Processing\ApiChatBadRequestException.cs" />
     <Compile Include="Processing\ApiChatException.cs" />
     <Compile Include="Processing\ApiChatLimiter.cs" />
     <Compile Include="Processing\BrakeFlowCallException.cs" />

@@ -217,10 +217,15 @@ namespace MGM.Game
             _statShower = (IStatShower) streamingContext.Context;
         }
 
-        public void Abort()
+        public void Abort(bool bySystem=false)
         {
-            if(State.Cast<EndState>()!=null)throw new GameCommandException(LocalizedStrings.GameState_GameFinished);
-            State = new EndState(State,true);
+            if (State.Cast<EndState>() != null)
+            {
+                if (bySystem) return;
+                throw new GameCommandException(LocalizedStrings.GameState_GameFinished);
+            }
+
+            State = new EndState(State,true,bySystem);
         }
     }
 }
