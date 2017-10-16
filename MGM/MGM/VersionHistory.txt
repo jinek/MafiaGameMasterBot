@@ -1,4 +1,7 @@
-﻿41||Version 0.41
+﻿42||Version 0.42
+- fixed: sometimes same player receives same role
+
+Version 0.41
 - automatic game abortion when bot becomes blocked
 
 Version 0.40
