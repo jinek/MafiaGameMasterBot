@@ -145,9 +145,12 @@ namespace MGM.Game.States
 
                 private Player GetRandomAndExclude(List<Player> left)
                 {
-                    var choice = left[Rnd.Next(0, left.Count)];
-                    if(!left.Remove(choice))throw new InvalidOperationException();
-                    return choice;
+                    lock(Rnd)
+                    {
+                        var choice = left[Rnd.Next(0, left.Count)];
+                        if (!left.Remove(choice)) throw new InvalidOperationException();
+                        return choice;
+                    }
                 }
 
                 public string ToString(int allCount)
