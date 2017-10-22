@@ -1,4 +1,7 @@
-﻿42||Version 0.42
+﻿43||Version 0.43
+- fixed: internal error in blocked chats
+
+Version 0.42
 - fixed: sometimes same player receives same role
 
 Version 0.41

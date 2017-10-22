@@ -25,9 +25,16 @@ namespace MGM.Game.States
                     $"{nameof(bySystem)} can be true only if {nameof(abort)} is true");
             _abort = abort;
             _bySystem = bySystem;
-            Game.GameStateBannerProvider.CreateBanner(ToString() + @"
-" + Game.GetPlayerStatuses(true));
+            try
+            {
 
+                Game.GameStateBannerProvider.CreateBanner(ToString() + @"
+" + Game.GetPlayerStatuses(true));
+            }
+            catch (ApiChatBadRequestException)
+            {
+                if (!bySystem) throw;
+            }
             Game.Delayed(this, () =>
             {
                 try
