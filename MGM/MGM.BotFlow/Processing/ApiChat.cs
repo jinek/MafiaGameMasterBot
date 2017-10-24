@@ -46,7 +46,7 @@ namespace MGM.BotFlow.Processing
         {
             Trace.WriteLine(text);
             TelemetryStatic.TelemetryClient.TrackEvent(TelemetryStatic.AnswerCallbackQueryKey,new Dictionary<string, string> {[TelemetryStatic.AnswerCallbackQueryKey]= _chat.Id.ToString()});
-            _api.AnswerCallbackQuery(replyTo, text);
+            _api.AnswerCallbackQuery(replyTo, text).FromResult2();
         }
 
         private Message SendMessage(long chatId, string text, long replyTo, ref EchoOptions echoOptions)
