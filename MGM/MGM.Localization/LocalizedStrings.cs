@@ -37,7 +37,7 @@ namespace MGM.Localization
         [LV("Ваш анонимный отзыв принят. Спасибо! Введите /subscribe ,что бы получать уведомления об обновлении игры")]
         public static readonly LS CommonEngine_FeedbackAccepted;
 
-        [LV("From 3 to 8 players are needed to play Mafia. There are different actors in the game (mafia, doctor, policeman, civilian). All players are devided in to 2 teams: civilians and mafia. Mafia need to kill all civilians (equal amount is enough) or to kill the policeman (if presented). Mafia kills secretly at night time. Civilians need to kill all mafia by voting and execution at day time. Please, vote and leave your comments here https://storebot.me/bot/MafiaGameMasterBot Source code is open now: https://github.com/jinek/MafiaGameMasterBot")]
+        [LV("3 to 8 players are needed to play Mafia. There are different actors in the game (mafia, doctor, policeman, civilian). All players are divided into 2 teams: civilians and mafia. Mafia need to kill all civilians (equal amount is enough) or to kill the policeman (if presented). Mafia kills secretly at night time. Civilians need to kill all mafia by voting and execution at day time. Please, vote and leave your comments here https://storebot.me/bot/MafiaGameMasterBot Source code is open now: https://github.com/jinek/MafiaGameMasterBot")]
         [LV("Для игры в мафию необходимо от 3-х до 8-ми игроков. В зависимости от количества в игре учасвтуют те или иные персонажи (мафия, доктор, комиссар, обычный мирный житель). Все игроки делятся на две команды: мирные жители и мафия. Задача мафии убить всех мирных жителей (достаточно сравнять кол-во) или убить комиссара (для некоторых режимов игры). Мафия убивает мирных жителей тайно, ночью. Задача мирных жителей убить мафию. Мирные жители убивают публично на открытом голосовании днём. Пожалуйста, голосуйте и оставляйте комментарии https://storebot.me/bot/MafiaGameMasterBot Исходный код доступен на github: https://github.com/jinek/MafiaGameMasterBot")]
         public static readonly LS CommonEngine_Help;
 
@@ -61,11 +61,11 @@ namespace MGM.Localization
         [LV("Просыпаются все, кроме *{0}*")]
         public static readonly LS DayState_EverybodyWakeUpBut;
 
-        [LV("Loose on all civilians kill")]
+        [LV("Lose on all civilians kill")]
         [LV("Проигрыш при убийстве всех жителей")]
         public static readonly LS Distributing_LooseOnCiviliansDie;
 
-        [LV("Loose on policeman kill")]
+        [LV("Lose on policeman kill")]
         [LV("Проигрыш при убийстве полицейского")]
         public static readonly LS Distributing_LooseOnPoliceDie;
 
@@ -110,7 +110,7 @@ namespace MGM.Localization
         [LV("Воздержался")]
         public static readonly LS FinalVotingState_SkipFact;
 
-        [LV("Final voting agaist *{0}*")]
+        [LV("Final voting against *{0}*")]
         [LV("Финальное голосование против *{0}*")]
         public static readonly LS FinalVotingState_VotingAgainst;
 
@@ -130,7 +130,7 @@ namespace MGM.Localization
         [LV("Незнакомая команда")]
         public static readonly LS FlowEngine_UnrecognizedCommand;
 
-        [LV("Sorry, we've got an error. We are already notificated, please try again later. Type /subscribe to be notified when game is updated")]
+        [LV("Sorry, we've got an error. We are already notified, please try again later. Type /subscribe to be notified when game is updated")]
         [LV("У нас произошла ошибка, и мы уже опевещены. Приносим свои извинения. Введите /subscribe , что бы получить уведомление об обновлении игры")]
         public static readonly LS GameEngine_ErrorSorry;
 
@@ -225,13 +225,13 @@ _Дождитесь окончания игры и введите команду
         [LV("Извините, в игре уже максимальное количество игроков")]
         public static readonly LS Game_TooMuchPlayers;
 
-        [LV(@"You are already partipiating in this game
+        [LV(@"You are already participating in this game
 _Get enough players and type /go to start the game_")]
         [LV(@"Вы уже участвуете в этой игре
 _Наберите достаточное количество игроков и введите /go что бы начать игру_")]
         public static readonly LS Game_YouAreInGameAlready;
 
-        [LV("Because of unknown issue you can not parcipiate in this game. Please, leave your /feedback")]
+        [LV("Because of unknown issue you can not participate in this game. Please, leave your /feedback")]
         [LV("Вы не можете учавствовать в этой игре из за технической проблемы. Пожалуйста, оставьте свой отзыв /feedback")]
         public static readonly LS Fault_TheSameId;
 
@@ -249,9 +249,9 @@ _Голосующая мафия выбирается случайно, но в�
         [LV("Нельзя убивать *мафию*")]
         public static readonly LS NightState_CanNotKillMafia;
 
-        [LV(@"Shoose a player for checking
-_Don't hurry to tell everybody if you know who is mafia. You will uncover yourself and second mafia will try to kill you next night_
-_If you decided to do that, be persuasive because mafia can try to indroduce himself as an 'real' police_")]
+        [LV(@"Choose a player for checking
+_Don't hurry to tell everybody if you know who is mafia. If you uncover yourself, the second mafia will try to kill you next night_
+_If you decide to do that, be persuasive because mafia can try to introduce himself as a 'real' police_")]
         [LV(@"Выберите игрока для проверки, что бы узнать кто он
 _Днём не спешите говорить, если вы раскрыли в мафию. Вы раскроете себя и вас попытается убить вторая мафия_
 _Если же вы решились - будьте убедительными, так как мафия может постараться выдать себя за комиссара_")]
@@ -278,7 +278,7 @@ _Если вы не выберите игрока, то убьёте себя_")
         public static readonly LS NightState_ChooseToKill;
 
         [LV(@"*City goes to sleep and mafia wake up*
-_Everybody must keep silence during the night_
+_Everybody must be silent during the night_
 _You can complain to anybody speaking by forwarding his message with command to me_ /complain")]
         [LV(@"*Город засыпает. Просыпается мафия*
 _Жителям города нужно соблюдать тишину_
@@ -312,7 +312,7 @@ _Этой ночью мафия попытается убить кого-то, �
         [LV("Приветствую! Добавьте меня в чат, что бы начать игру")]
         public static readonly LS PirvateEngine_AddMeToChat;
 
-        [LV("Too many playres")]
+        [LV("Too many players")]
         [LV("Слишком много игроков")]
         public static readonly LS PirvateEngine_CanNotAddMorePlayers;
 
@@ -340,7 +340,7 @@ _По итогам будет начато ещё одно финальное г
         [LV("Пропустить")]
         public static readonly LS PrevotingState_ToSkip;
 
-        [LV("Player does not participiate in the game")]
+        [LV("Player does not participate in the game")]
         [LV("Игрок не участвует в игре")]
         public static readonly LS PrevotingState_UserDoesNotPlay;
 
