@@ -1,4 +1,7 @@
-﻿43||Version 0.43
+﻿44||Version 0.44
+- text fix
+
+Version 0.43
 - fixed: internal error in blocked chats
 
 Version 0.42
