@@ -1,4 +1,7 @@
-﻿45||Version 0.45
+﻿45||Version 0.46
+- technical Update
+
+Version 0.45
 - game restored after shutdown for delayed payment. In case you want to help - leave your contact in /feedback
 
 Version 0.44
