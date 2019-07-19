@@ -427,8 +427,7 @@ Subscribed: {db.ChatInTelegrams.Count(chat => chat.Subscribed)}
 All time chats with more than 2 games: {db.ChatInTelegrams.Count(chatInTelegram => chatInTelegram.Games.Count(game => game.FinishTime != null)>2)}
 Last month chats with more than 2 games: {db.ChatInTelegrams.Count(chatInTelegram => chatInTelegram.Games.Count(game => game.CreationTime>monthAgo && game.FinishTime != null)>2)}
 Old chats with more than 2 games in last month: {db.ChatInTelegrams.Count(chatInTelegram =>chatInTelegram.Games.Any(game => game.CreationTime<=monthAgo) && chatInTelegram.Games.Count(game => game.CreationTime>monthAgo && game.FinishTime != null)>2)}
-";
-                
+";                
                 return statString;
             });
         }
