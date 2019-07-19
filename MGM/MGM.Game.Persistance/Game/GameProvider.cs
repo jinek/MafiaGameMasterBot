@@ -420,10 +420,19 @@ namespace MGM.Game.Persistance.Game
         {
             return UsingDb(db =>
             {
-                
-                return $@"Games: {db.Games.Count()}(Played {db.Games.Count(game => game.FinishTime != null)}) Users:{db.UserInTelegrams.Count()} Game Chats:{db.Games.GroupBy(game => game.ChatInTelegram).Count()}
+                DateTime monthAgo = DateTime.Now.AddMonths(-1);
+                string statString = $@"Games: {db.Games.Count()}(Played {db.Games.Count(game => game.FinishTime != null)}) Users:{db.UserInTelegrams.Count()} Game Chats:{db.Games.GroupBy(game => game.ChatInTelegram).Count()}
 Current games: {db.Games.Count(game => game.FinishTime == null && game.MaxWakeupTime != null)}
-Subscribed: {db.ChatInTelegrams.Count(chat => chat.Subscribed)}";
+Subscribed: {db.ChatInTelegrams.Count(chat => chat.Subscribed)}
+All time chats with more than 2 games: {db.ChatInTelegrams.Count(chatInTelegram => chatInTelegram.Games.Count(game => game.FinishTime != null)>2)}
+Last month chats with more than 2 games: {db.ChatInTelegrams.Count(chatInTelegram => chatInTelegram.Games.Count(game => game.CreationTime>monthAgo && game.FinishTime != null)>2)}
+Old chats with more than 2 games in last month: {db.ChatInTelegrams.Count(chatInTelegram =>chatInTelegram.Games.First().CreationTime<monthAgo && chatInTelegram.Games.Count(game => game.CreationTime>monthAgo && game.FinishTime != null)>2)}
+";
+
+                
+                
+                
+                return statString;
             });
         }
 

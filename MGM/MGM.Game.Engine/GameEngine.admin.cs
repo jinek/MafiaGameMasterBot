@@ -14,7 +14,7 @@ namespace MGM.Game.Engine
 {
     public partial class GameEngine
     {
-        private readonly Dictionary<Guid,UserInChat> _sessions = new Dictionary<Guid, UserInChat>();//not thread safe but we don't care
+        private readonly Dictionary<Guid,UserInChat> _sessions = new Dictionary<Guid, UserInChat>();//not thread safe but we don't care (+ we really care, must be thread safe)
 
         public void BuildAdminFlow()
         {
